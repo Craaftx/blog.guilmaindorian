@@ -13,50 +13,53 @@ export const BlogPostTemplate = ({
   author,
 }) => {
   return (
-    <section className="section">
-      <div className="container content">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-              {title}
-            </h1>
-            <div dangerouslySetInnerHTML={{ __html: content }} />
-            <div style={{ marginTop: `4rem` }}>
-              <p>
-                {date} - posted by{' '}
-                <Link to={`/author/${author.slug}`}>{author.name}</Link>
-              </p>
-              {categories && categories.length ? (
-                <div>
-                  <h4>Categories</h4>
-                  <ul className="taglist">
-                    {categories.map(category => (
-                      <li key={`${category.slug}cat`}>
-                        <Link to={`/categories/${category.slug}/`}>
-                          {category.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ) : null}
-              {tags && tags.length ? (
-                <div>
-                  <h4>Tags</h4>
-                  <ul className="taglist">
-                    {tags.map(tag => (
-                      <li key={`${tag.slug}tag`}>
-                        <Link to={`/tags/${tag.slug}/`}>{tag.name}</Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ) : null}
+    <article className="post type-post">
+      <div className="post-inner thin">
+        <div className="entry-content">
+          <header class="entry-header">
+            <h1 className="title">{title}</h1>
+            <div className="header-meta-wrapper">
+              <span>Posté le {date} par </span>
+              <Link to={`/author/${author.slug}`}>{author.name}</Link>{' '}
+              <span>dans</span>
+              {categories.map(category => (
+                <Link
+                  to={`/categories/${category.slug}/`}
+                  key={`${category.slug}cat`}
+                >
+                  {category.name}
+                </Link>
+              ))}
+            </div>
+          </header>
+        </div>
+        <div
+          className="entry-content"
+          dangerouslySetInnerHTML={{ __html: content }}
+        />
+        <div className="entry-content">
+          <div className="post-meta-wrapper">
+            {tags && tags.length ? (
+              <div className="post-meta-tags">
+                <ul className="taglist">
+                  {tags.map(tag => (
+                    <li key={`${tag.slug}tag`}>
+                      <Link to={`/tags/${tag.slug}/`}>{tag.name}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
+            <div className="post-meta-author">
+              <small>Auteur</small>
+              <img src={author.avatar_urls.wordpress_96} />
+              <Link to={`/author/${author.slug}`}>{author.name}</Link>
+              <p>{author.description}</p>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </article>
   )
 }
 
@@ -67,7 +70,6 @@ BlogPostTemplate.propTypes = {
 
 const BlogPost = ({ data }) => {
   const { wordpressPost: post } = data
-
   return (
     <Layout>
       <Helmet title={`${post.title} | Blog`} />
@@ -96,7 +98,7 @@ export const pageQuery = graphql`
     id
     slug
     content
-    date(formatString: "MMMM DD, YYYY")
+    date(formatString: "DD/MM/YYYY")
     title
   }
   query BlogPostByID($id: String!) {
@@ -105,7 +107,7 @@ export const pageQuery = graphql`
       title
       slug
       content
-      date(formatString: "MMMM DD, YYYY")
+      date(formatString: "DD/MM/YYYY")
       categories {
         name
         slug
@@ -116,6 +118,10 @@ export const pageQuery = graphql`
       }
       author {
         name
+        description
+        avatar_urls {
+          wordpress_96
+        }
         slug
       }
     }
