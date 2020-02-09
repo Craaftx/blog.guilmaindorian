@@ -2,13 +2,15 @@ import React from 'react'
 import Helmet from 'react-helmet'
 
 import Navbar from './Navbar'
-import './all.sass'
+import Footer from './Footer'
+import './scss/main.scss'
 
 const TemplateWrapper = ({ children }) => (
   <div>
     <Helmet title="Home | Gatsby + WordPress" />
     <Navbar />
-    <div>{children}</div>
+    <main className="site-content">{children}</main>
+    <Footer />
   </div>
 )
 
