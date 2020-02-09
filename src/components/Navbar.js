@@ -18,37 +18,28 @@ const Navbar = () => (
       }
     `}
     render={data => (
-      <nav className="navbar is-transparent">
-        <div className="container">
-          <div className="navbar-brand">
-            <Link to="/" className="navbar-item">
-              <figure className="image">
-                <img src={logo} alt="Kaldi" style={{ width: '88px' }} />
-              </figure>
-            </Link>
-          </div>
-          <div className="navbar-start">
-            {data.allWordpressPage.edges.map(edge => (
-              <Link
-                className="navbar-item"
-                to={edge.node.slug}
-                key={edge.node.slug}
-              >
-                {edge.node.title}
-              </Link>
-            ))}
-          </div>
-          <div className="navbar-end">
-            <a
-              className="navbar-item"
-              href="https://github.com/GatsbyCentral/gatsby-starter-wordpress"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span className="icon">
-                <img src={github} alt="Github" />
-              </span>
-            </a>
+      <nav className="navigation">
+        <div className="navigation-illustration">
+          <div className="moon"></div>
+          <div className="moon-full"></div>
+          {[...Array(200)].map(() => (
+            <span class="star"></span>
+          ))}
+        </div>
+        <div className="navigation-content">
+          <Link to="/" className="navigation-brand">
+            <p>Guilmain Dorian</p>
+            <span>Developer &amp; CSS Wizard</span>
+          </Link>
+          <div className="navigation-items">
+            <ul>
+              <li>
+                <Link href="#about">Home</Link>
+              </li>
+              <li>
+                <Link href="#projects">Categories</Link>
+              </li>
+            </ul>
           </div>
         </div>
       </nav>
