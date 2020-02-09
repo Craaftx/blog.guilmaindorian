@@ -1,0 +1,71 @@
+$color_background: #42406f;
+$color_planet: #f8f5e0;
+$color_planet_glow: #806a90;
+
+$count: 200;
+$rmax: 3;
+$rmin: 1;
+$gmax: 15;
+$gmin: 2;
+$omax: 0.9;
+$omin: 0.2;
+
+.navigation-illustration {
+  position: relative;
+  .moon {
+    position: absolute;
+    top: -400px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 700px;
+    width: 700px;
+    border-radius: 50%;
+    background-color: lighten($color_planet_glow, 45%);
+    border-color: 1px solid $color_planet;
+    box-shadow: 0 0 25px 25px lighten($color_planet_glow, 20%),
+      0 0 75px 75px lighten($color_planet_glow, 10%),
+      0 0 150px 150px lighten($color_planet_glow, 0%),
+      0 0 400px 400px lighten($color_background, 5%);
+    &::before {
+      content: '';
+      z-index: 10;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 700px;
+      width: 700px;
+      background-color: lighten($color_planet_glow, 45%);
+      border-radius: 50%;
+    }
+  }
+
+  .moon-fill {
+    position: absolute;
+    top: -400px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 700px;
+    width: 700px;
+    border-radius: 50%;
+    background-color: lighten($color_planet_glow, 45%);
+  }
+
+  .star {
+    position: absolute;
+    background-color: #ffffff;
+    border-radius: 50%;
+    @for $i from 1 to $count {
+      &:nth-child(#{$i}) {
+        $r: random($rmax - $rmin) + $rmin + px;
+        $g: random($gmax - $gmin) + $gmin;
+        height: $r;
+        width: $r;
+        top: random(100) + 1vh;
+        left: random(100) + 1vw;
+        box-shadow: 0 0 ($g + px) #0000ff, 0 0 ($g + px) rgba(#ffffff, 1);
+        opacity: random(($omax - $omin) * 10) / 10 + $omin;
+      }
+    }
+  }
+}
