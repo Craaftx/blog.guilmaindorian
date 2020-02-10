@@ -17,11 +17,11 @@ export const BlogPostTemplate = ({
       <div className="post-inner thin">
         <div className="entry-content">
           <header class="entry-header">
-            <h1 className="title">{title}</h1>
+            <h1>{title}</h1>
             <div className="header-meta-wrapper">
-              <span>Posté le {date} par </span>
-              <Link to={`/author/${author.slug}`}>{author.name}</Link>{' '}
-              <span>dans</span>
+              <span>Posté le {date} par </span>{' '}
+              <Link to={`/author/${author.slug}`}>{author.name}</Link>
+              <span>dans</span>{' '}
               {categories.map(category => (
                 <Link
                   to={`/categories/${category.slug}/`}
