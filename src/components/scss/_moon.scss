@@ -10,22 +10,23 @@ $gmin: 2;
 $omax: 0.9;
 $omin: 0.2;
 
-.navigation-illustration {
+.moon-illustration {
   position: relative;
+  z-index: -1;
   .moon {
     position: absolute;
-    top: -400px;
+    top: -40vw;
     left: 50%;
     transform: translateX(-50%);
-    height: 700px;
-    width: 700px;
+    height: 60vw;
+    width: 60vw;
     border-radius: 50%;
     background-color: lighten($color_planet_glow, 45%);
     border-color: 1px solid $color_planet;
-    box-shadow: 0 0 25px 25px lighten($color_planet_glow, 20%),
-      0 0 75px 75px lighten($color_planet_glow, 10%),
-      0 0 150px 150px lighten($color_planet_glow, 0%),
-      0 0 400px 400px lighten($color_background, 5%);
+    box-shadow: 0 0 3vw 3vw lighten($color_planet_glow, 20%),
+      0 0 7vw 7vw lighten($color_planet_glow, 10%),
+      0 0 15vw 15vw lighten($color_planet_glow, 0%),
+      0 0 30vw 30vw lighten($color_background, 5%);
     &::before {
       content: '';
       z-index: 10;
@@ -33,8 +34,8 @@ $omin: 0.2;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      height: 700px;
-      width: 700px;
+      height: 60vw;
+      width: 60vw;
       background-color: lighten($color_planet_glow, 45%);
       border-radius: 50%;
     }
@@ -42,11 +43,11 @@ $omin: 0.2;
 
   .moon-fill {
     position: absolute;
-    top: -400px;
+    top: -40vw;
     left: 50%;
     transform: translateX(-50%);
-    height: 700px;
-    width: 700px;
+    height: 60vw;
+    width: 60vw;
     border-radius: 50%;
     background-color: lighten($color_planet_glow, 45%);
   }
