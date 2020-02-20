@@ -9,9 +9,9 @@ const Category = props => {
   const { edges: posts, totalCount } = data.allWordpressPost
   const { title: siteTitle } = data.site.siteMetadata
   const { name: category } = pageContext
-  const title = `${totalCount} post${
+  const title = `${totalCount} publication${
     totalCount === 1 ? '' : 's'
-  } in the “${category}” category`
+  } dans la catégorie “${category}”`
 
   return (
     <Layout>

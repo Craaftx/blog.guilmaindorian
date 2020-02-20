@@ -1,21 +1,38 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 export default class IndexPage extends React.Component {
   render() {
-    const { posts } = this.props
+    const { posts, title, isTopTitle = true } = this.props
 
     return (
       <section className="post-list">
+        <div className="post-list__title">
+          {isTopTitle ? <h1>{title}</h1> : <h2>{title}</h2>}
+        </div>
         {posts.map(({ node: post }) => (
           <div className="post-list__single" key={post.id}>
-            <Link className="post-list__single__title" to={post.slug}>
-              {post.title}
-            </Link>
+            <AniLink
+              cover
+              direction="top"
+              bg="#42406f"
+              duration={1}
+              className="post-list__single__title"
+              to={post.slug}
+              dangerouslySetInnerHTML={{ __html: post.title }}
+            ></AniLink>
             <div className="post-list__single__meta">
-              <span>{post.date}</span>{' '}<span>-</span>{' '}
-              <Link to={`/author/${post.author.slug}`}>{post.author.name}</Link>
+              <span>{post.date}</span> <span>-</span>{' '}
+              <AniLink
+                swipe
+                direction="bottom"
+                duration={1}
+                to={`/author/${post.author.slug}`}
+              >
+                {post.author.name}
+              </AniLink>
             </div>
             <div
               className="post-list__single__excerpt"
