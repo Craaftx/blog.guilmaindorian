@@ -1,6 +1,6 @@
 import React from 'react'
 
-const MoonIllustration = ({ starsAmout }) => (
+const Moon = ({ starsAmout }) => (
   <div className="moon-illustration">
     <div className="moon"></div>
     {[...Array(starsAmout)].map(() => (
@@ -10,4 +10,4 @@ const MoonIllustration = ({ starsAmout }) => (
   </div>
 )
 
-export default MoonIllustration
+export default Moon
