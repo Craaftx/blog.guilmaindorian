@@ -3,6 +3,10 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
+import PlanetBlue from '../planets/PlanetBlue'
+import PlanetAsteroid from '../planets/PlanetAsteroid'
+import PlanetRed from '../planets/PlanetRed'
+import PlanetPurple from '../planets/PlanetPurple'
 
 export const BlogPostTemplate = ({
   content,
@@ -13,14 +17,17 @@ export const BlogPostTemplate = ({
   author,
 }) => {
   return (
+    <>
     <article className="post type-post">
       <div className="post-inner thin">
         <div className="entry-content">
-          <header class="entry-header">
-            <h1>{title}</h1>
+          <header className="entry-header">
+            <h1 
+              dangerouslySetInnerHTML={{ __html: title }}
+              ></h1>
             <div className="header-meta-wrapper">
               <span>Posté le {date} par </span>{' '}
-              <Link to={`/author/${author.slug}`}>{author.name}</Link>
+              <Link to={`/author/${author.slug}`}>{author.name}</Link>{' '}
               <span>dans</span>{' '}
               {categories.map(category => (
                 <Link
@@ -60,6 +67,7 @@ export const BlogPostTemplate = ({
         </div>
       </div>
     </article>
+    </>
   )
 }
 
