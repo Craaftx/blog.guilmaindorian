@@ -2,7 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 
 const Wrapper = styled.div(({ size }) => ({
-  position: 'relative',
+  position: 'absolute',
   fontSize: size ? `${size}` : '240px',
   height: '1em',
   width: '1em',
