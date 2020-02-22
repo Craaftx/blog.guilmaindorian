@@ -104,6 +104,7 @@ body {
   position: relative;
   z-index: 10;
   overflow: hidden;
+  padding-top: 30vh;
 }
 
 /* Clearing ---------------------------------- */
@@ -2362,10 +2363,6 @@ figure.wp-block-table.is-style-stripes {
     margin-top: 6rem;
   }
 
-  .post-inner {
-    padding-top: 8rem;
-  }
-
   /* POST FOOTER */
 
   .post-meta-wrapper.post-meta-single-bottom {
@@ -2793,12 +2790,6 @@ figure.wp-block-table.is-style-stripes {
 
   .nav-links > * {
     margin: 2.5rem 0 0 4rem;
-  }
-
-  /* Error 404 ----------------------------- */
-
-  .error404 #site-content {
-    padding-top: 8rem;
   }
 
   /* Widgets ------------------------------- */
@@ -3425,20 +3416,6 @@ figure.wp-block-table.is-style-stripes {
   .header-toggles .toggle {
     padding: 0 4rem;
   }
-
-  /* Menu Modal ---------------------------- */
-
-  /* Search Modal -------------------------- */
-
-  /* Sub Page ------------------------------ */
-
-  /* Template: Cover Template -------------- */
-
-  .cover-header + .post-inner {
-    padding-top: 10rem;
-  }
-
-  /* Post: Archive ------------------------- */
 
   /* Post: Single -------------------------- */
 

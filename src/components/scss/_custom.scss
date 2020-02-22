@@ -294,7 +294,7 @@
   display: flex;
   max-width: 86rem;
   width: calc(100% - 4rem);
-  margin: 20vh auto 0 auto;
+  margin: 0 auto 0 auto;
   justify-content: space-between;
   flex-wrap: wrap;
   &__title {
@@ -378,8 +378,4 @@
   left: 30%;
   transform: translateX(-30%);
   z-index: -1;
-}
-
-.post.type-post {
-  margin: 20vh auto 0 auto;
 }
