@@ -3,10 +3,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
-import PlanetBlue from '../planets/PlanetBlue'
-import PlanetAsteroid from '../planets/PlanetAsteroid'
-import PlanetRed from '../planets/PlanetRed'
-import PlanetPurple from '../planets/PlanetPurple'
+import PlanetDisplayer from '../components/PlanetDisplayer'
 
 export const BlogPostTemplate = ({
   content,
@@ -18,6 +15,7 @@ export const BlogPostTemplate = ({
 }) => {
   return (
     <>
+    <PlanetDisplayer category={categories[0].slug} isOnSinglePage={true}/>
     <article className="post type-post">
       <div className="post-inner thin">
         <div className="entry-content">
