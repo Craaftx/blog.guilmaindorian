@@ -8,6 +8,7 @@ const Wrapper = styled.div(({ size }) => ({
   width: '1em',
   boxSizing: 'border-box',
   borderRadius: '50%',
+  transform: "rotate(-60deg)"
 }))
 
 const Body = styled.div`
