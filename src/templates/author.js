@@ -10,7 +10,7 @@ const Author = props => {
   const totalCount =
     (authored_wordpress__POST && authored_wordpress__POST.length) || 0
   const { title: siteTitle } = data.site.siteMetadata
-  const title = `${totalCount} post${totalCount === 1 ? '' : 's'} by ${name}`
+  const title = `${totalCount} publication${totalCount === 1 ? '' : 's'} par ${name}`
 
   // The `authored_wordpress__POST` returns a simple array instead of an array
   // of edges / nodes. We therefore need to convert the array here.
