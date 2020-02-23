@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 import Navbar from './Navbar'
 import Footer from './Footer'
 import Moon from './Moon'
-import './scss/main.scss'
+import '../scss/main.scss'
 
 const TemplateWrapper = ({ children }) => (
   <>
