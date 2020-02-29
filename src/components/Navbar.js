@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { StaticQuery, graphql } from 'gatsby'
-import AniLink from 'gatsby-plugin-transition-link/AniLink'
+import AnimationLink from '../utils/AnimationLink'
 import PlanetBlue from '../planets/PlanetBlue'
 import PlanetAsteroid from '../planets/PlanetAsteroid'
 import PlanetRed from '../planets/PlanetRed'
@@ -25,7 +25,7 @@ const Navbar = () => {
       render={data => (
         <nav className="navigation">
           <div
-            class="navigation__mobile-burger"
+            className="navigation__mobile-burger"
             onClick={e => {
               setMenuIsOpen(menuIsOpen ? false : true)
             }}
@@ -38,16 +38,13 @@ const Navbar = () => {
             }`}
           >
             <div
-              class="navigation-content__mobile-background"
+              className="navigation-content__mobile-background"
               onClick={e => {
                 setMenuIsOpen(menuIsOpen ? false : true)
               }}
             ></div>
             <div className="navigation-brand">
-              <AniLink
-                cover
-                direction="top"
-                bg="#42406f"
+              <AnimationLink
                 to="/"
                 className="navigation-item"
               >
@@ -58,13 +55,10 @@ const Navbar = () => {
                   <div>Dorian G</div>
                   <small>CSS Blog ?</small>
                 </div>
-              </AniLink>
+              </AnimationLink>
             </div>
             <div className="navigation-items">
-              <AniLink
-                cover
-                direction="top"
-                bg="#42406f"
+              <AnimationLink
                 to="/"
                 className="navigation-item"
               >
@@ -72,11 +66,8 @@ const Navbar = () => {
                   <PlanetBlue size="60px" />
                 </div>
                 <span className="navigation-item__link">Tutoriels</span>
-              </AniLink>
-              <AniLink
-                cover
-                direction="top"
-                bg="#42406f"
+              </AnimationLink>
+              <AnimationLink
                 to="/"
                 className="navigation-item"
               >
@@ -84,11 +75,8 @@ const Navbar = () => {
                   <PlanetPurple size="60px" />
                 </div>
                 <span className="navigation-item__link">Séries</span>
-              </AniLink>
-              <AniLink
-                cover
-                direction="top"
-                bg="#42406f"
+              </AnimationLink>
+              <AnimationLink
                 to="/"
                 className="navigation-item"
               >
@@ -96,11 +84,8 @@ const Navbar = () => {
                   <PlanetAsteroid size="60px" />
                 </div>
                 <span className="navigation-item__link">Ressources</span>
-              </AniLink>
-              <AniLink
-                cover
-                direction="top"
-                bg="#42406f"
+              </AnimationLink>
+              <AnimationLink
                 to="/"
                 className="navigation-item"
               >
@@ -108,7 +93,7 @@ const Navbar = () => {
                   <PlanetRed size="60px" />
                 </div>
                 <span className="navigation-item__link">Expériences</span>
-              </AniLink>
+              </AnimationLink>
             </div>
           </div>
         </nav>

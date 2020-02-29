@@ -3,12 +3,13 @@ import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import PostList from '../components/PostList'
+import PlanetDisplayer from '../components/PlanetDisplayer'
 
 const Category = props => {
   const { data, pageContext } = props
   const { edges: posts, totalCount } = data.allWordpressPost
   const { title: siteTitle } = data.site.siteMetadata
-  const { name: category } = pageContext
+  const { name: category, slug } = pageContext
   const title = `${totalCount} publication${
     totalCount === 1 ? '' : 's'
   } dans la catégorie “${category}”`
@@ -16,6 +17,7 @@ const Category = props => {
   return (
     <Layout>
       <Helmet title={`${category} | ${siteTitle}`} />
+      <PlanetDisplayer category={slug} isOnSinglePage={true} />
       <PostList posts={posts} title={title} />
     </Layout>
   )
