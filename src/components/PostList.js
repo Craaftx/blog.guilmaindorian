@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
@@ -10,7 +10,20 @@ export default class IndexPage extends React.Component {
     return (
       <section className="post-list">
         <div className="post-list__title">
-          {isTopTitle ? <h1>{title}</h1> : <h2>{title}</h2>}
+          {isTopTitle ? (
+            <h1>{title}</h1>
+          ) : (
+            <Fragment>
+              <h1>Blog</h1>
+              <p>
+                Hé bien bonjour et bienvenue sur ce blog, on parle de code, de
+                CSS et de design. Vous retrouverez des tutoriels, des séries
+                d'articles sur des thèmes précis, des expériences et je partage
+                aussi avec vous des ressources qui m'ont bien servi.
+              </p>
+              <h2>{title}</h2>
+            </Fragment>
+          )}
         </div>
         {posts.map(({ node: post }) => (
           <div className="post-list__single" key={post.id}>
