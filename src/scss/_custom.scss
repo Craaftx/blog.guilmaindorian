@@ -66,7 +66,8 @@
   &::before {
     content: '';
     position: absolute;
-    top: 0; left: 170px;
+    top: 0;
+    left: 170px;
     width: 100vw;
     height: 100vh;
     background-color: #000;
@@ -287,6 +288,12 @@
   }
 }
 
+.post-meta-share {
+  button {
+    margin: 0 10px 10px 0;
+  }
+}
+
 /* Post List */
 
 .post-list {
@@ -378,4 +385,54 @@
   left: 30%;
   transform: translateX(-30%);
   z-index: -1;
+}
+
+/**
+*   Cookies Bar
+*/
+.cookies-bar {
+  position: fixed;
+  min-width: auto;
+  width: 240px;
+  max-width: calc(100% - 20px);
+  left: auto;
+  right: 0;
+  bottom: 0;
+  margin: 10px;
+  border-radius: 4px;
+  box-shadow: 0 9px 15px -2px rgba(0, 0, 0, 0.27);
+  padding: 20px 20px 10px 20px;
+  z-index: 400;
+  background-color: #111136;
+  &__content {
+    position: relative;
+    display: block;
+    margin-bottom: 15px;
+    padding-right: 15px;
+    color: inherit;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: left;
+  }
+  &__button {
+    display: inline-block;
+    padding: 4px 8px;
+    margin: 0 0 0 0;
+    color: #eeeeee;
+    background-color: transparent;
+    border: 2px solid transparent;
+    border-radius: 2px;
+    font-size: 14px;
+    line-height: 1.5;
+    text-decoration: none;
+    vertical-align: initial;
+    text-transform: none;
+    float: right;
+    transition: 200ms;
+    &:hover {
+      border-color: #eeeeee;
+      text-decoration: none;
+    }
+  }
 }
