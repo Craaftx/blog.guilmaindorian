@@ -1,6 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby + WordPress Starter',
+    title: 'Dorian G',
+		twitterHandle: '@Craaftx1',
+		author: '@Craaftx',
+    description: '',
+		siteURL: 'https://blog.guilmaindorian.com',
   },
   plugins: [
     'gatsby-plugin-transition-link',
@@ -12,6 +16,12 @@ module.exports = {
         google: {
           families: ['Open Sans', 'Lato']
         }
+      }
+    },
+    {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+        shortname: `guilmaindorian`
       }
     },
     {
