@@ -39,7 +39,7 @@ const Asteroids = styled.ul`
   li {
     position: absolute;
     list-style: none;
-    background: #DF463E;
+    background: #df463e;
     border-radius: 50%;
   }
   li:nth-child(1) {
@@ -96,14 +96,14 @@ const PlanetRed = ({ size }) => (
   <Wrapper size={size}>
     <Body />
     <Asteroids>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
+      <li />
+      <li />
+      <li />
+      <li />
+      <li />
+      <li />
+      <li />
+      <li />
     </Asteroids>
   </Wrapper>
 )

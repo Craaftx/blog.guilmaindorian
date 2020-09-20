@@ -80,7 +80,7 @@ const Lines = styled.ul`
     right: 0em;
     background-color: #e4478a;
     height: 0.1em;
-    width: 0.50em;
+    width: 0.5em;
     border-radius: 0.15em;
   }
   li:nth-child(5) {
@@ -88,27 +88,27 @@ const Lines = styled.ul`
     left: 0em;
     background-color: #d72370;
     height: 0.15em;
-    width: 0.70em;
+    width: 0.7em;
     border-radius: 0.1em;
   }
   li:nth-child(6) {
-    top: 0.60em;
+    top: 0.6em;
     right: 0em;
     background-color: #e4478a;
     height: 0.1em;
-    width: 0.60em;
+    width: 0.6em;
     border-radius: 0.15em;
   }
   li:nth-child(7) {
-    top: 0.70em;
+    top: 0.7em;
     left: 0em;
     background-color: #d72370;
     height: 0.1em;
-    width: 0.60em;
+    width: 0.6em;
     border-radius: 0.1em;
   }
   li:nth-child(8) {
-    top: 0.80em;
+    top: 0.8em;
     right: 0em;
     background-color: #e4478a;
     height: 0.1em;
@@ -116,11 +116,11 @@ const Lines = styled.ul`
     border-radius: 0.1em;
   }
   li:nth-child(9) {
-    top: 0.90em;
+    top: 0.9em;
     left: 0em;
     background-color: #d72370;
     height: 0.1em;
-    width: 0.70em;
+    width: 0.7em;
     border-radius: 0.1em;
   }
 `
@@ -129,15 +129,15 @@ const PlanetPurple = ({ size }) => (
   <Wrapper size={size}>
     <Body />
     <Lines>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
+      <li />
+      <li />
+      <li />
+      <li />
+      <li />
+      <li />
+      <li />
+      <li />
+      <li />
     </Lines>
   </Wrapper>
 )

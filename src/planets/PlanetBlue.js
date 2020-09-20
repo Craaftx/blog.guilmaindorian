@@ -79,11 +79,11 @@ const PlanetBlue = ({ size }) => (
   <Wrapper size={size}>
     <Body />
     <Lines>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
+      <li />
+      <li />
+      <li />
+      <li />
+      <li />
     </Lines>
   </Wrapper>
 )

@@ -8,7 +8,7 @@ const Wrapper = styled.div(({ size }) => ({
   width: '1em',
   boxSizing: 'border-box',
   borderRadius: '50%',
-  transform: "rotate(-60deg)"
+  transform: 'rotate(-60deg)',
 }))
 
 const Body = styled.div`
@@ -90,11 +90,11 @@ const PlanetAsteroid = ({ size }) => (
   <Wrapper size={size}>
     <Body />
     <Asteroids>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
+      <li />
+      <li />
+      <li />
+      <li />
+      <li />
     </Asteroids>
   </Wrapper>
 )
