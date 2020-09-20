@@ -1,7 +1,7 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import AnimationLink from '../utils/AnimationLink'
 
-const Pagination = ({ pageContext, pathPrefix }) => {
+const Pagination = ({ pageContext }) => {
   const { previousPagePath, nextPagePath } = pageContext
 
   return (
@@ -9,16 +9,16 @@ const Pagination = ({ pageContext, pathPrefix }) => {
       <div className="navbar navbar-menu">
         {previousPagePath && (
           <div className="navbar-item">
-            <Link to={previousPagePath} rel="prev">
+            <AnimationLink to={previousPagePath} rel="prev">
               Previous
-            </Link>
+            </AnimationLink>
           </div>
         )}
         {nextPagePath && (
           <div className="navbar-item">
-            <Link to={nextPagePath} rel="next">
+            <AnimationLink to={nextPagePath} rel="next">
               Next
-            </Link>
+            </AnimationLink>
           </div>
         )}
       </div>

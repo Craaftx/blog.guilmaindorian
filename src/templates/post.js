@@ -18,6 +18,7 @@ import { Disqus, CommentCount } from 'gatsby-plugin-disqus'
 import Layout from '../components/Layout'
 import PlanetDisplayer from '../components/PlanetDisplayer'
 import useSiteMetadata from '../utils/useSiteMetadata'
+import AnimationLink from '../utils/AnimationLink'
 
 export const BlogPostTemplate = ({
   content,
@@ -29,30 +30,32 @@ export const BlogPostTemplate = ({
   author,
 }) => {
   const { siteURL } = useSiteMetadata()
-  let disqusConfig = {
+  const disqusConfig = {
     url: `${siteURL}/${slug}`,
     identifier: slug,
-    title: title,
+    title,
   }
   return (
     <>
-      <PlanetDisplayer category={categories[0].slug} isOnSinglePage={true} />
+      <PlanetDisplayer category={categories[0].slug} isOnSinglePage />
       <article className="post type-post">
         <div className="post-inner thin">
           <div className="entry-content">
             <header className="entry-header">
-              <h1 dangerouslySetInnerHTML={{ __html: title }}></h1>
+              <h1 dangerouslySetInnerHTML={{ __html: title }} />
               <div className="header-meta-wrapper">
-                <span>Posté le {date} par </span>{' '}
-                <Link to={`/author/${author.slug}`}>{author.name}</Link>{' '}
+                <span>{`Posté le ${date} par `}</span>{' '}
+                <AnimationLink to={`/author/${author.slug}`}>
+                  {author.name}
+                </AnimationLink>{' '}
                 <span>dans</span>{' '}
                 {categories.map(category => (
-                  <Link
+                  <AnimationLink
                     to={`/categories/${category.slug}/`}
                     key={`${category.slug}cat`}
                   >
                     {category.name}
-                  </Link>
+                  </AnimationLink>
                 ))}
               </div>
             </header>
@@ -68,7 +71,9 @@ export const BlogPostTemplate = ({
                   <ul className="taglist">
                     {tags.map(tag => (
                       <li key={`${tag.slug}tag`}>
-                        <Link to={`/tags/${tag.slug}/`}>{tag.name}</Link>
+                        <AnimationLink to={`/tags/${tag.slug}/`}>
+                          {tag.name}
+                        </AnimationLink>
                       </li>
                     ))}
                   </ul>
@@ -76,29 +81,34 @@ export const BlogPostTemplate = ({
               ) : null}
               <div className="post-meta-author">
                 <small>Auteur</small>
-                <img src={author.avatar_urls.wordpress_96} />
-                <Link to={`/author/${author.slug}`}>{author.name}</Link>
+                <img
+                  src={author.avatar_urls.wordpress_96}
+                  alt="Profil de l'auteur"
+                />
+                <AnimationLink to={`/author/${author.slug}`}>
+                  {author.name}
+                </AnimationLink>
                 <p>{author.description}</p>
               </div>
               <div className="post-meta-share">
                 <FacebookShareButton url={`${siteURL}/${slug}`}>
-                  <FacebookIcon size={32} round={true} />
+                  <FacebookIcon size={32} round />
                 </FacebookShareButton>
                 <TwitterShareButton url={`${siteURL}/${slug}`}>
-                  <TwitterIcon size={32} round={true} />
+                  <TwitterIcon size={32} round />
                 </TwitterShareButton>
                 <LinkedinShareButton url={`${siteURL}/${slug}`}>
-                  <LinkedinIcon size={32} round={true} />
+                  <LinkedinIcon size={32} round />
                 </LinkedinShareButton>
                 <RedditShareButton url={`${siteURL}/${slug}`}>
-                  <RedditIcon size={32} round={true} />
+                  <RedditIcon size={32} round />
                 </RedditShareButton>
                 <EmailShareButton url={`${siteURL}/${slug}`}>
-                  <EmailIcon size={32} round={true} />
+                  <EmailIcon size={32} round />
                 </EmailShareButton>
               </div>
               <div className="post-meta-comments">
-                <CommentCount config={disqusConfig} placeholder={'...'} />
+                <CommentCount config={disqusConfig} placeholder="..." />
                 <Disqus config={disqusConfig} />
               </div>
             </div>
