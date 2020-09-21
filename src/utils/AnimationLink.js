@@ -1,8 +1,8 @@
-import React, { Children } from 'react'
+import React from 'react'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
-const transitionColor = "#42406f";
-const transitionDirection = "top";
+const transitionColor = '#42406f'
+const transitionDirection = 'top'
 
 const AnimationLink = ({ children, to, className }) => {
   return (
@@ -13,9 +13,9 @@ const AnimationLink = ({ children, to, className }) => {
       to={to}
       className={className}
     >
-        {children}
+      {children}
     </AniLink>
   )
 }
 
-export default AnimationLink;
+export default AnimationLink

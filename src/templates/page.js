@@ -9,7 +9,7 @@ export const PageTemplate = ({ title, content }) => {
       <div className="post-inner thin">
         <div className="entry-content">
           <header className="entry-header">
-            <h1 dangerouslySetInnerHTML={{ __html: title }}></h1>
+            <h1 dangerouslySetInnerHTML={{ __html: title }} />
           </header>
         </div>
 
