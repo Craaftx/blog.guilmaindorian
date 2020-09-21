@@ -17,7 +17,7 @@ const Category = props => {
   return (
     <Layout>
       <Helmet title={`${category} | ${siteTitle}`} />
-      <PlanetDisplayer category={slug} isOnSinglePage={true} />
+      <PlanetDisplayer category={slug} isOnSinglePage />
       <PostList posts={posts} title={title} />
     </Layout>
   )

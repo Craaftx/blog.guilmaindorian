@@ -11,7 +11,7 @@ const Wrapper = styled.div(({ size }) => ({
   transform: 'scale(0.3) rotate(172deg)',
   top: '-101px',
   left: '110px',
-  zIndex: '-1'
+  zIndex: '-1',
 }))
 
 const Body = styled.div`
@@ -114,13 +114,13 @@ const Cookie = ({ size }) => (
   <Wrapper size={size}>
     <Body />
     <Chunks>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
+      <li />
+      <li />
+      <li />
+      <li />
+      <li />
+      <li />
+      <li />
     </Chunks>
   </Wrapper>
 )

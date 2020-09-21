@@ -11,7 +11,7 @@ import '../scss/main.scss'
 
 const TemplateWrapper = ({ children }) => (
   <>
-    <Helmet title={`Blog | Dorian G`} />
+    <Helmet title="Blog | Dorian G" />
     <Navbar />
     <div className="site-wrapper">
       <Moon starsAmout={100} />
@@ -19,7 +19,7 @@ const TemplateWrapper = ({ children }) => (
       <Footer />
     </div>
     <CookieConsent
-      disableStyles={true}
+      disableStyles
       buttonClasses="cookies-bar__button"
       containerClasses="cookies-bar"
       contentClasses="cookies-bar__content"
@@ -27,9 +27,10 @@ const TemplateWrapper = ({ children }) => (
       location="bottom"
     >
       <Cookie />
-      Hey ! Je dois te préciser que le blog utilise des cookies. En
-      explorant le site, tu acceptes leur utilisation selon les conditions de la{' '}
+      Hey ! Je dois te préciser que le blog utilise des cookies. En explorant le
+      site, tu acceptes leur utilisation selon les conditions de la
       <AnimationLink to="/politique-de-confidentialite">
+        {' '}
         politique de confidentialité
       </AnimationLink>
       .
