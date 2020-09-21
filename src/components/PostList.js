@@ -1,7 +1,7 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import AniLink from 'gatsby-plugin-transition-link/AniLink'
+import AnimationLink from '../utils/AnimationLink'
 
 export default class IndexPage extends React.Component {
   render() {
@@ -13,7 +13,7 @@ export default class IndexPage extends React.Component {
           {isTopTitle ? (
             <h1>{title}</h1>
           ) : (
-            <Fragment>
+            <>
               <h1>Blog</h1>
               <p>
                 Hé bien bonjour et bienvenue sur ce blog, on parle de code, de
@@ -22,30 +22,32 @@ export default class IndexPage extends React.Component {
                 aussi avec vous des ressources qui m'ont bien servi.
               </p>
               <h2>{title}</h2>
-            </Fragment>
+            </>
           )}
         </div>
         {posts.map(({ node: post }) => (
           <div className="post-list__single" key={post.id}>
-            <AniLink
+            <AnimationLink
               cover
               direction="top"
               bg="#42406f"
               duration={1}
               className="post-list__single__title"
-              to={post.slug}
-              dangerouslySetInnerHTML={{ __html: post.title }}
-            ></AniLink>
+              to={`/${post.slug}`}
+            >
+              <span dangerouslySetInnerHTML={{ __html: post.title }} />
+            </AnimationLink>
             <div className="post-list__single__meta">
-              <span>{post.date}</span> <span>-</span>{' '}
-              <AniLink
+              <span>{post.date} </span>
+              <span>-</span>{' '}
+              <AnimationLink
                 swipe
                 direction="bottom"
                 duration={1}
                 to={`/author/${post.author.slug}`}
               >
                 {post.author.name}
-              </AniLink>
+              </AnimationLink>
             </div>
             <div
               className="post-list__single__excerpt"
