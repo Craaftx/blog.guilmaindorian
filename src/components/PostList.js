@@ -16,10 +16,10 @@ export default class IndexPage extends React.Component {
             <>
               <h1>Blog</h1>
               <p>
-                Hé bien bonjour et bienvenue sur ce blog, on parle de code, de
-                CSS et de design. Vous retrouverez des tutoriels, des séries
-                d'articles sur des thèmes précis, des expériences et je partage
-                aussi avec vous des ressources qui m'ont bien servi.
+                Hé salut, ici on parle de code, de CSS, de design et surement
+                d&apos;autres trucs. Tu retrouveras des séries d&apos;articles,
+                des tutoriels, plein d&apos;expériences et des ressources
+                intéressantes.
               </p>
               <h2>{title}</h2>
             </>

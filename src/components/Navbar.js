@@ -35,7 +35,12 @@ const Navbar = () => {
             </div>
             <div className="navigation-item__link">
               <div>Dorian G</div>
-              <small>CSS Blog ?</small>
+              <small>
+                CSS{' '}
+                <span role="img" aria-label="Magicien">
+                  🧙‍
+                </span>
+              </small>
             </div>
           </AnimationLink>
         </div>
