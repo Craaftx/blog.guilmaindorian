@@ -25,6 +25,18 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Guilmain Dorian - Blog`,
+        short_name: `Dorian G`,
+        start_url: `/`,
+        background_color: `#42406f`,
+        theme_color: `#42406f`,
+        display: `minimal-ui`,
+        icon: `static/img/icon.png`,
+      },
+    },
+    {
       resolve: 'gatsby-source-wordpress',
       options: {
         // The base url to your WP site.
