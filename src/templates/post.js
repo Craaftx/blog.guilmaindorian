@@ -29,9 +29,9 @@ export const BlogPostTemplate = ({
   date,
   author,
 }) => {
-  const { siteURL } = useSiteMetadata()
+  const { siteUrl } = useSiteMetadata()
   const disqusConfig = {
-    url: `${siteURL}/${slug}`,
+    url: `${siteUrl}/${slug}`,
     identifier: slug,
     title,
   }
@@ -91,19 +91,19 @@ export const BlogPostTemplate = ({
                 <p>{author.description}</p>
               </div>
               <div className="post-meta-share">
-                <FacebookShareButton url={`${siteURL}/${slug}`}>
+                <FacebookShareButton url={`${siteUrl}/${slug}`}>
                   <FacebookIcon size={32} round />
                 </FacebookShareButton>
-                <TwitterShareButton url={`${siteURL}/${slug}`}>
+                <TwitterShareButton url={`${siteUrl}/${slug}`}>
                   <TwitterIcon size={32} round />
                 </TwitterShareButton>
-                <LinkedinShareButton url={`${siteURL}/${slug}`}>
+                <LinkedinShareButton url={`${siteUrl}/${slug}`}>
                   <LinkedinIcon size={32} round />
                 </LinkedinShareButton>
-                <RedditShareButton url={`${siteURL}/${slug}`}>
+                <RedditShareButton url={`${siteUrl}/${slug}`}>
                   <RedditIcon size={32} round />
                 </RedditShareButton>
-                <EmailShareButton url={`${siteURL}/${slug}`}>
+                <EmailShareButton url={`${siteUrl}/${slug}`}>
                   <EmailIcon size={32} round />
                 </EmailShareButton>
               </div>
