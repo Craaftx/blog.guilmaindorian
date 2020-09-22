@@ -4,7 +4,7 @@ module.exports = {
     twitterHandle: '@Craaftx1',
     author: '@Craaftx',
     description: 'Blog technique où je parle de code, de CSS et de design.',
-    siteURL: 'https://blog.guilmaindorian.com',
+    siteUrl: 'https://blog.guilmaindorian.com',
   },
   plugins: [
     'gatsby-plugin-transition-link',
