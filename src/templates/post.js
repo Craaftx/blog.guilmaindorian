@@ -1,24 +1,25 @@
-import React from 'react'
+import { graphql } from 'gatsby'
+import { CommentCount, Disqus } from 'gatsby-plugin-disqus'
 import PropTypes from 'prop-types'
+import React from 'react'
 import Helmet from 'react-helmet'
-import { graphql, Link } from 'gatsby'
+import ReactHtmlParser from 'react-html-parser'
 import {
-  EmailShareButton,
   EmailIcon,
-  FacebookShareButton,
+  EmailShareButton,
   FacebookIcon,
-  LinkedinShareButton,
+  FacebookShareButton,
   LinkedinIcon,
-  RedditShareButton,
+  LinkedinShareButton,
   RedditIcon,
-  TwitterShareButton,
+  RedditShareButton,
   TwitterIcon,
+  TwitterShareButton,
 } from 'react-share'
-import { Disqus, CommentCount } from 'gatsby-plugin-disqus'
 import Layout from '../components/Layout'
 import PlanetDisplayer from '../components/PlanetDisplayer'
-import useSiteMetadata from '../utils/useSiteMetadata'
 import AnimationLink from '../utils/AnimationLink'
+import useSiteMetadata from '../utils/useSiteMetadata'
 
 export const BlogPostTemplate = ({
   content,
@@ -128,7 +129,7 @@ const BlogPost = ({ data }) => {
   const { wordpressPost: post } = data
   return (
     <Layout>
-      <Helmet title={`${post.title} | Blog`} />
+      <Helmet>{ReactHtmlParser(post.yoast_head)}</Helmet>
       <BlogPostTemplate
         content={post.content}
         categories={post.categories}
@@ -164,6 +165,7 @@ export const pageQuery = graphql`
       title
       slug
       content
+      yoast_head
       date(formatString: "DD/MM/YYYY")
       categories {
         name

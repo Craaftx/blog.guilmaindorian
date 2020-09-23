@@ -1,6 +1,8 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+import PropTypes from 'prop-types'
+import React from 'react'
+import { Helmet } from 'react-helmet'
+import ReactHtmlParser from 'react-html-parser'
 import Layout from '../components/Layout'
 
 export const PageTemplate = ({ title, content }) => {
@@ -29,9 +31,9 @@ PageTemplate.propTypes = {
 
 const Page = ({ data }) => {
   const { wordpressPage: page } = data
-
   return (
     <Layout>
+      <Helmet>{ReactHtmlParser(page.yoast_head)}</Helmet>
       <PageTemplate title={page.title} content={page.content} />
     </Layout>
   )
@@ -48,6 +50,7 @@ export const pageQuery = graphql`
     wordpressPage(id: { eq: $id }) {
       title
       content
+      yoast_head
     }
   }
 `
