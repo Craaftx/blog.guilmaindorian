@@ -35,11 +35,13 @@ export default class IndexPage extends React.Component {
               className="post-list__single__title"
               to={`/${post.slug}`}
             >
-              <span dangerouslySetInnerHTML={{ __html: post.title }} />
+              <span>{post.title}</span>
             </AnimationLink>
             <div className="post-list__single__meta">
               <span>{post.date}</span>
-              <span>-</span>{' '}
+              &nbsp;
+              <span>-</span>
+              &nbsp;
               <AnimationLink
                 swipe
                 direction="bottom"

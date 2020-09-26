@@ -30,8 +30,7 @@ const TemplateWrapper = ({ children }) => (
       Hey ! Je dois te préciser que le blog utilise des cookies. En explorant le
       site, tu acceptes leur utilisation selon les conditions de la
       <AnimationLink to="/politique-de-confidentialite">
-        {' '}
-        politique de confidentialité
+        &nbsp; politique de confidentialité
       </AnimationLink>
       .
     </CookieConsent>

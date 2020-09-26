@@ -36,7 +36,7 @@ const Navbar = () => {
             <div className="navigation-item__link">
               <div>Dorian G</div>
               <small>
-                CSS{' '}
+                CSS &nbsp;
                 <span role="img" aria-label="Magicien">
                   🧙‍
                 </span>

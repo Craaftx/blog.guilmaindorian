@@ -45,11 +45,14 @@ export const BlogPostTemplate = ({
             <header className="entry-header">
               <h1 dangerouslySetInnerHTML={{ __html: title }} />
               <div className="header-meta-wrapper">
-                <span>{`Posté le ${date} par `}</span>{' '}
+                <span>{`Posté le ${date} par `}</span>
+                &nbsp;
                 <AnimationLink to={`/author/${author.slug}`}>
                   {author.name}
-                </AnimationLink>{' '}
-                <span>dans</span>{' '}
+                </AnimationLink>
+                &nbsp;
+                <span>dans</span>
+                &nbsp;
                 {categories.map(category => (
                   <AnimationLink
                     to={`/categories/${category.slug}/`}
