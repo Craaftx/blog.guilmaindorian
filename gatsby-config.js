@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Dorian G',
+    title: 'Blog - Dorian G',
     twitterHandle: '@Craaftx1',
     author: '@Craaftx',
     description: 'Blog technique où je parle de code, de CSS et de design.',
@@ -75,6 +75,20 @@ module.exports = {
       options: {
         https: true,
         host: 'blog.guilmaindorian.com',
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-sitemap',
+      options: {
+        exclude: ['/tags/*', '/author/*', '/politique-de-confidentialite/'],
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://blog.guilmaindorian.com',
+        sitemap: 'https://blog.guilmaindorian.com/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }],
       },
     },
   ],
