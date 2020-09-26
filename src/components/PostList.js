@@ -38,7 +38,7 @@ export default class IndexPage extends React.Component {
               <span>{post.title}</span>
             </AnimationLink>
             <div className="post-list__single__meta">
-              <span>{post.date}</span>
+              <span className="post-list__single__meta__date">{post.date}</span>
               &nbsp;
               <span>-</span>
               &nbsp;
@@ -46,6 +46,7 @@ export default class IndexPage extends React.Component {
                 swipe
                 direction="bottom"
                 duration={1}
+                className="post-list__single__meta__author"
                 to={`/author/${post.author.slug}`}
               >
                 {post.author.name}
