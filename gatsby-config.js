@@ -70,5 +70,12 @@ module.exports = {
         purgeOnly: ['/all.sass'],
       },
     }, // must be after other CSS plugins
+    {
+      resolve: 'gatsby-plugin-htaccess',
+      options: {
+        https: true,
+        host: 'blog.guilmaindorian.com',
+      },
+    },
   ],
 }
