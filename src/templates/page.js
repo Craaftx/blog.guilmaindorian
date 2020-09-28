@@ -33,7 +33,10 @@ const Page = ({ data }) => {
   const { wordpressPage: page } = data
   return (
     <Layout>
-      <Helmet>{ReactHtmlParser(page.yoast_head)}</Helmet>
+      <Helmet>
+        {ReactHtmlParser(page.yoast_head)}
+        <meta name="robots" content="index, follow" />
+      </Helmet>
       <PageTemplate title={page.title} content={page.content} />
     </Layout>
   )
