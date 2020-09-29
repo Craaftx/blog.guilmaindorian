@@ -439,3 +439,13 @@
     }
   }
 }
+
+.wp-block-embed figcaption,
+.wp-block-image figcaption {
+  color: rgba(255, 255, 255, 0.7);
+  font-style: italic;
+}
+
+.wp-block-image.alignwide img {
+  margin: 0 auto 0 auto;
+}
