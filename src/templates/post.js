@@ -132,10 +132,7 @@ const BlogPost = ({ data }) => {
   const { wordpressPost: post } = data
   return (
     <Layout>
-      <Helmet>
-        {ReactHtmlParser(post.yoast_head)}
-        <meta name="robots" content="index, follow" />
-      </Helmet>
+      <Helmet>{ReactHtmlParser(post.yoast_head)}</Helmet>
       <BlogPostTemplate
         content={post.content}
         categories={post.categories}
