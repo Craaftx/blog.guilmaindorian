@@ -305,9 +305,37 @@
 }
 
 .post-meta-share {
-  button {
-    margin: 0 10px 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  border-bottom: 2px solid #363463;
+  padding-bottom: 20px;
+  margin-bottom: 26px;
+  span {
+    font-size: 16px;
+    font-weight: 500;
+    color: #ddd;
   }
+  &__buttons {
+    display: flex;
+    align-items: center;
+  }
+  button {
+    margin: 0 10px 0px 0;
+  }
+}
+
+.post-meta-comments {
+  position: relative;
+  padding: 26px 30px;
+  border-radius: 20px;
+  box-sizing: border-box;
+  background-color: #2b2a57;
+  color: #fff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.09), 0 6px 6px rgba(0, 0, 0, 0.13);
+  text-decoration: none;
+  margin: 3rem 0 3rem 0;
 }
 
 /* Post List */

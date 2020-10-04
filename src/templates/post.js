@@ -94,25 +94,32 @@ export const BlogPostTemplate = ({
                 </AnimationLink>
                 <p>{author.description}</p>
               </div>
-              <div className="post-meta-share">
-                <FacebookShareButton url={`${siteUrl}/${slug}`}>
-                  <FacebookIcon size={32} round />
-                </FacebookShareButton>
-                <TwitterShareButton url={`${siteUrl}/${slug}`}>
-                  <TwitterIcon size={32} round />
-                </TwitterShareButton>
-                <LinkedinShareButton url={`${siteUrl}/${slug}`}>
-                  <LinkedinIcon size={32} round />
-                </LinkedinShareButton>
-                <RedditShareButton url={`${siteUrl}/${slug}`}>
-                  <RedditIcon size={32} round />
-                </RedditShareButton>
-                <EmailShareButton url={`${siteUrl}/${slug}`}>
-                  <EmailIcon size={32} round />
-                </EmailShareButton>
-              </div>
               <div className="post-meta-comments">
-                <CommentCount config={disqusConfig} placeholder="..." />
+                <div className="post-meta-share">
+                  <span>
+                    Tu peux partager cet article pour soutenir le blog{' '}
+                    <span role="img" aria-label="Emoji avec des coeurs">
+                      🥰
+                    </span>
+                  </span>
+                  <div className="post-meta-share__buttons">
+                    <FacebookShareButton url={`${siteUrl}/${slug}`}>
+                      <FacebookIcon size={32} round />
+                    </FacebookShareButton>
+                    <TwitterShareButton url={`${siteUrl}/${slug}`}>
+                      <TwitterIcon size={32} round />
+                    </TwitterShareButton>
+                    <LinkedinShareButton url={`${siteUrl}/${slug}`}>
+                      <LinkedinIcon size={32} round />
+                    </LinkedinShareButton>
+                    <RedditShareButton url={`${siteUrl}/${slug}`}>
+                      <RedditIcon size={32} round />
+                    </RedditShareButton>
+                    <EmailShareButton url={`${siteUrl}/${slug}`}>
+                      <EmailIcon size={32} round />
+                    </EmailShareButton>
+                  </div>
+                </div>
                 <Disqus config={disqusConfig} />
               </div>
             </div>
