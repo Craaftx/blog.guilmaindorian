@@ -45,7 +45,7 @@ const Navbar = () => {
           </AnimationLink>
         </div>
         <div className="navigation-items">
-          {/* <AnimationLink
+          <AnimationLink
             to="/categories/tutoriels/"
             className="navigation-item"
           >
@@ -53,7 +53,7 @@ const Navbar = () => {
               <PlanetBlue size="60px" />
             </div>
             <span className="navigation-item__link">Tutoriels</span>
-          </AnimationLink> */}
+          </AnimationLink>
           <AnimationLink to="/categories/series/" className="navigation-item">
             <div className="navigation-item__planet">
               <PlanetPurple size="60px" />
